@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e197668a0335049b0f63ad08302e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _signal:
+  _thiefEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2143039595}
@@ -985,7 +985,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _finishsignal:
+  _thiefExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2143039595}

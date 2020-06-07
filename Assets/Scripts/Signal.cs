@@ -5,17 +5,17 @@ using UnityEngine.Events;
 
 public class Signal : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _signal;
-    [SerializeField] private UnityEvent _finishsignal;
+    [SerializeField] private UnityEvent _thiefEnter;
+    [SerializeField] private UnityEvent _thiefExit;
 
 
     private void OnTriggerEnter2D()
     {
-        _signal.Invoke();
+        _thiefEnter.Invoke();
     }
 
     private void OnTriggerExit2D()
     {
-        _finishsignal.Invoke();
+        _thiefExit.Invoke();
     }
 }
