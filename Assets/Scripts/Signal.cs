@@ -11,6 +11,9 @@ public class Signal : MonoBehaviour
     private bool _courutineOpener = true;
     private bool _volumeChanger = true;
     private float _volume = 0.3f;
+    private float _volumeMax = 5f;
+    private float _volumeMin = 0.4f;
+    private float _volumeUnit = 0.3f;
 
     private void Update()
     {
@@ -34,19 +37,19 @@ public class Signal : MonoBehaviour
     private IEnumerator VolumeController()
     {
         var waitforsec = new WaitForSeconds(0.2f);
-        if (_volume <= 5f && _volumeChanger == true)
+        if (_volume <= _volumeMax && _volumeChanger == true)
         {
             AudioListener.volume = _volume;
-            _volume += 0.3f;
+            _volume += _volumeUnit;
         }
         else
         {
             _volumeChanger = false;
         }
-        if (_volume >= 0.4f && _volumeChanger == false)
+        if (_volume >= _volumeMin && _volumeChanger == false)
         {
             AudioListener.volume = _volume;
-            _volume -= 0.3f;
+            _volume -= _volumeUnit;
         }
         else
         {
